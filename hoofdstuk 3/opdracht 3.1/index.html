@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Opdracht 3.1</title>
@@ -9,18 +10,18 @@
             margin: 0 0 0 0;
             padding: 0 0 0 0;
         }
-        
+
         body {
             font-family: 'Copse', serif;
             text-align: center;
         }
-        
+
         img {
             height: 300px;
             width: 300px;
             border: 0px;
         }
-        
+
         #pics {
             width: 900px;
             height: 900px;
@@ -28,8 +29,10 @@
             font-size: 0px;
             margin: auto;
         }
+
     </style>
 </head>
+
 <body>
     <h1>BirdShuffle</h1>
     <div id="pics">
@@ -47,26 +50,20 @@
         var plaatjes = document.getElementsByTagName("img");
         var random = 0;
         var randomNumbers = [];
-        
+
         while (randomNumbers.length < 9) {
-            random = (Math.floor(Math.random()*9)+1);
+            random = (Math.floor(Math.random() * 9) + 1);
             if (randomNumbers.lastIndexOf(random) == -1)
-            randomNumbers.push(random);     
+                randomNumbers.push(random);
         }
-        
+
         var random = 0;
         for (var plaatje in plaatjes) {
-            plaatjes[plaatje].src = "img/bird"+randomNumbers[random]+".jpg";
+            plaatjes[plaatje].src = "img/bird" + randomNumbers[random] + ".jpg";
             random++;
         }
-        
-    /*    for (var i=0; i<plaatjes.length; i++){
-            
-        random = (Math.floor(Math.random()*9)+1;
-        plaatjes[i].src = "img/bird"+random+".jpg"
-            
-        }
-        */
+
     </script>
 </body>
+
 </html>
