@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opdracht 1</title>
+</head>
+<style>
+        
+    body {
+        font-family: 'copse', serif;
+        text-align: center;
+    }
+    
+    div.aappicture {
+        height: 450px;
+        width: 300px;
+        float: left;
+        background-color: red;
+    }
+    
+    #pics {
+        widows: 900px;
+        height: 1350px;
+        border: solid 1px black;
+        font-size: 0px;
+        margin: auto;
+    }
+    
+</style>
+<body>
+   <h1>MonkeyChooser</h1>
+   <h3>Choose your favourite monkey!</h3>
+    <div id="pics" ></div>
+    
+    <script>
+        
+        pics = document.getElementById("pics");
+        newElement = document.createElement("div");
+        newElement.className = "aappicture";
+        pics.appendChild(newElement);
+        
+    </script>
+</body>
+</html>
