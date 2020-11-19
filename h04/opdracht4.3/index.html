@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>opdracht 4.3</title>
+</head>
+<style>
+    #slideholder {
+        height: 400px;
+        width: 800px;
+        border: none;
+    }
+
+    #slideholder2 {
+        height: 400px;
+        width: 800px;
+        border: none;
+    }
+
+    #slideholder3 {
+        height: 400px;
+        width: 800px;
+        border: none;
+    }
+
+</style>
+
+<body>
+    <div id="slideholder"></div>
+    <div id="slideholder2"></div>
+    <div id="slideholder3"></div>
+
+    <script>
+        //deffinitely the worst code i've ever written, but it works...
+
+        var slideholder = document.getElementById("slideholder");
+        var slideholder2 = document.getElementById("slideholder2");
+        var slideholder3 = document.getElementById("slideholder3");
+        var oog = [1, 2, 3];
+        var neus = [1, 2, 3];
+        var mond = [1, 2, 3];
+        var teller = 0;
+        var teller2 = 0;
+        var teller3 = 0;
+
+        slideholder.style.backgroundImage = "url('img/oog1.png')";
+        slideholder2.style.backgroundImage = "url('img/neus1.png')";
+        slideholder3.style.backgroundImage = "url('img/mond1.png')";
+
+        slideholder.addEventListener("click", function() {
+            slideholder.style.backgroundImage = "url('img/oog" + getOog() + ".png')";
+        });
+
+        slideholder2.addEventListener("click", function() {
+            slideholder2.style.backgroundImage = "url('img/neus" + getNeus() + ".png')";
+        });
+
+        slideholder3.addEventListener("click", function() {
+            slideholder3.style.backgroundImage = "url('img/mond" + getMond() + ".png')";
+        });
+
+        function getOog() {
+            if (teller >= oog.length) {
+                teller = 1;
+            } else {
+                teller++;
+            }
+            return teller;
+        }
+
+        function getNeus() {
+            if (teller2 >= neus.length) {
+                teller2 = 1;
+            } else {
+                teller2++;
+            }
+            return teller2;
+        }
+
+        function getMond() {
+            if (teller3 >= mond.length) {
+                teller3 = 1;
+            } else {
+                teller3++;
+            }
+            return teller3;
+        }
+
+    </script>
+</body>
+
+</html>
