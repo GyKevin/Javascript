@@ -5,19 +5,29 @@
     <title>Opdracht 1</title>
 </head>
 <style>
-        
     body {
         font-family: 'copse', serif;
         text-align: center;
     }
-    
-    div.aappicture {
+
+    div.picture-holder {
+        box-sizing: border-box;
         height: 450px;
         width: 300px;
         float: left;
-        background-color: red;
+        background-color: aqua;
+        border: 1px solid black;
     }
     
+    div.favourite {
+        width: 300px;
+        height: 150px;
+        background-color: purple;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
     #pics {
         widows: 900px;
         height: 1350px;
@@ -25,20 +35,48 @@
         font-size: 0px;
         margin: auto;
     }
-    
 </style>
+
 <body>
-   <h1>MonkeyChooser</h1>
-   <h3>Choose your favourite monkey!</h3>
-    <div id="pics" ></div>
-    
+    <h1>MonkeyChooser</h1>
+    <h3>Choose your favourite monkey!</h3>
+    <div id="pics"></div>
+
     <script>
-        
         pics = document.getElementById("pics");
-        newElement = document.createElement("div");
-        newElement.className = "aappicture";
-        pics.appendChild(newElement);
+        createPicsHolder();
+        createBirdImages();
         
+        function createPicsHolder(){
+            for (var i = 0; i < 9; i++) {
+                pictureHolder = document.createElement("div");
+                
+                pictureHolder.className = "picture-holder";
+                pictureHolder.id = "picture-holder-" + i;
+                pics.appendChild(pictureHolder);
+            }
+        }
+        function createBirdImages() {
+            pictureHolder = document.getElementsByClassName("picture-holder");
+            for (var i = 0; i< pictureHolder.length; i++) {
+                birdPlaatje = document.createElement("img");
+                birdPlaatje.src = "img/bird" + (i+1) + ".jpg";
+                favourite = document.createElement("div");
+                favourite.className = "favourite";
+                favourite.id = "favourite_" + (i+1);
+                birdPlaatje.id = (i+1);
+                birdPlaatje.addEventListener("click", function () {
+                    makeFavourite(this.id);
+                });
+                pictureHolder[i].appendChild(favourite);
+                pictureHolder[i].appendChild(birdPlaatje);
+            }
+            function makeFavourite(id) {
+                console.log("het gaat om..." + id);
+                
+                favourite = document.getElementById("favoruite_" + id);
+                favourite.style.backgroundImage = "url('img/bird1.png')";
+            }
+        }
     </script>
-</body>
-</html>
+</body></html>
