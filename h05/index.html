@@ -59,13 +59,13 @@
         function createBirdImages() {
             pictureHolder = document.getElementsByClassName("picture-holder");
             for (var i = 0; i< pictureHolder.length; i++) {
-                birdPlaatje = document.createElement("img");
-                birdPlaatje.src = "img/bird" + (i+1) + ".jpg";
                 favourite = document.createElement("div");
                 favourite.className = "favourite";
                 favourite.id = "favourite_" + (i+1);
+                birdPlaatje = document.createElement("img");
+                birdPlaatje.src = "img/bird" + (i+1) + ".jpg";
                 birdPlaatje.id = (i+1);
-                birdPlaatje.addEventListener("click", function () {
+                birdPlaatje.addEventListener("click", function() {
                     makeFavourite(this.id);
                 });
                 pictureHolder[i].appendChild(favourite);
@@ -73,9 +73,12 @@
             }
             function makeFavourite(id) {
                 console.log("het gaat om..." + id);
-                
-                favourite = document.getElementById("favoruite_" + id);
-                favourite.style.backgroundImage = "url('img/bird1.png')";
+                notFavourite = document.getElementsByClassName("favourite");
+                for (var i = 0; i < notFavourite.length; i++) {
+                    notFavourite[i].style.backgroundImage = "none";
+                }
+                favourite = document.getElementById("favourite_" + id);
+                favourite.style.backgroundImage = "url('img/heart.png')";
             }
         }
     </script>
