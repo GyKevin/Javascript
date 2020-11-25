@@ -1,0 +1,20 @@
+body {
+    background-color: aqua;
+    text-align: center;
+}
+
+#pics {
+    width: 1600px;
+    height: 900px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+div.picture-holder {
+    box-sizing: border-box;
+    width: 250px;
+    height: 250px;
+    margin: 5px;
+    background-color: white;
+    border: 1px solid black;
+}
