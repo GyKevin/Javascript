@@ -1,21 +1,25 @@
 body {
-    background-color: aqua;
+    background-color: purple;
     text-align: center;
 }
 
-#pics {
+.memory-game {
     width: 1560px;
     height: 780px;
     border: 1px solid black;
     margin: auto;
 }
 
-div.picture-holder {
+.memory-card {
     box-sizing: border-box;
     width: 250px;
     height: 250px;
+    display: flex;
     margin: 5px;
     background-color: white;
     border: 1px solid black;
     float: left;
+}
+
+.front-face, .back-face {
 }
