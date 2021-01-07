@@ -52,12 +52,33 @@ function resetBoard() {
 }
 //shuffle cards
 
+var images = document.getElementByTagName("img");
+var usedIds = [];
+images.filter(image => image.src == "").forEach(image => {
+    var newId = Math.floor(Math.random * (images.length + 1));
+    while (!hasTwoOf(usedIds, newId)) {
+        var newId = Math.floor(Math.random * (images.length + 1));
+    }
+    usedIds.push(newId);
+    image.src = "img/bird" + newId + ".jpg";
+});
 
-(function shuffle() {
-    cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 18);
-        card.style.order = randomPos;
-    });
-})();
+function hasTwoOf(array, id) {
+    var valuesSoFar = Object.create(null);
+    for (var i = 0; i < array.length; ++i) {
+        var value = array[i];
+        if (array[i] == id) {
+            if (value in valuesSoFar) {
+                return true;
+            }
+            valuesSoFar[value] = true;
+        }
+    }
+    return false;
+}
+
+for(var i = 0; i < 10; i++) {
+    console.log("Kevin");
+}
 
 cards.forEach(card => card.addEventListener('click', flipCard));
